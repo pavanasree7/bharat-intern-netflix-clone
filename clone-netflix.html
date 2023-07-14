@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Netflix-like Homepage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav li {
+      list-style: none;
+      margin-left: 15px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .banner {
+      position: relative;
+      height: 400px;
+      background-image: url('netflix_banner.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 40px;
+    }
+
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    }
+
+    .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .banner-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .banner-content p {
+      font-size: 18px;
+    }
+
+    .movies-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+    }
+
+    .movie-card {
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.05);
+    }
+
+    .movie-card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .movie-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .movie-card .overlay-content {
+      text-align: center;
+    }
+
+    .movie-card .overlay-content h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .movie-card .overlay-content p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="logo">Netflix</h1>
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a</li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </header>
+
+    <div class="banner">
+      <div class="banner-content">
+        <h1>Welcome to Netflix</h1>
+        <p>Watch unlimited movies and TV shows anytime, anywhere.</p>
+      </div>
+    </div>
+
+    <h2>Popular Movies</h2>
+
+    <div class="movies-container">
+      <div class="movie-card">
+        <img src="movie1.jpg" alt="Movie 1">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h3>Movie 1</h3>
+            <p>Description of Movie 1</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="movie2.jpg" alt="Movie 2">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h3>Movie 2</h3>
+            <p>Description of Movie 2</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="movie3.jpg" alt="Movie 3">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h3>Movie 3</h3>
+            <p>Description of Movie 3</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="movie4.jpg" alt="Movie 4">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h3>Movie 4</h3>
+            <p>Description of Movie 4</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
